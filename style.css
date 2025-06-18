@@ -1,0 +1,390 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to bottom, #16222a 0%, #314e3c 100%);
+    color: #e6f2ef;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.header {
+    background: rgba(22, 34, 42, 0.92);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(20, 83, 45, 0.2);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #b7eacb;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px #7ec8e3, 0 0 16px #b7eacb;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #cbe7e3;
+    margin-top: 0.5rem;
+}
+
+.portfolio-section {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: rgba(20, 83, 45, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(22,34,42,0.15);
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(120deg, rgba(49,78,60,0.93) 70%, rgba(126,200,227,0.10) 100%);
+    border: 2px solid #b7eacb;
+    box-shadow: 0 8px 32px 0 rgba(183,234,203,0.10), 0 4px 24px rgba(22,34,42,0.15);
+    backdrop-filter: blur(2px);
+}
+
+.portfolio-section h2 {
+    color: #7ec8e3;
+    border-bottom: 2px solid #b7eacb;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 8px #b7eacb88;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.project-card {
+    background: rgba(10, 35, 66, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(56, 189, 248, 0.15);
+    padding: 2.2rem 2rem 2rem 2rem;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: linear-gradient(135deg, rgba(22,34,42,0.97) 80%, rgba(183,234,203,0.10) 100%);
+    border: 2px solid #7ec8e3;
+    box-shadow: 0 4px 24px #7ec8e322, 0 2px 8px #b7eacb22;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: -40px;
+    width: 80px; height: 80px;
+    background: radial-gradient(circle, #7ec8e355 0%, transparent 80%);
+    z-index: 0;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(183,234,203,0.25);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    color: #b7eacb;
+    position: relative;
+    z-index: 1;
+}
+
+.project-card p {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: #cbe7e3;
+    position: relative;
+    z-index: 1;
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: rgba(10, 35, 66, 0.7);
+    color: #b7eacb;
+    margin-top: 3rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, rgba(22,34,42,0.93) 60%, rgba(183,234,203,0.10) 100%);
+    border-top: 2px solid #7ec8e3;
+    box-shadow: 0 -2px 8px #7ec8e322;
+    z-index: 10;
+    position: relative;
+}
+
+/* Aurora Effect Background */
+.aurora {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(ellipse at 60% 20%, #7ec8e3cc 0%, transparent 60%),
+                radial-gradient(ellipse at 30% 40%, #b7eacb99 0%, transparent 70%),
+                radial-gradient(ellipse at 80% 60%, #e6f2efaa 0%, transparent 80%);
+    mix-blend-mode: lighten;
+    opacity: 0.6;
+    animation: auroraMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMove {
+    0% { background-position: 60% 20%, 30% 40%, 80% 60%; }
+    100% { background-position: 65% 25%, 25% 45%, 75% 65%; }
+}
+
+/* Parallax Stars */
+.stars, .stars2, .stars3 {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 2;
+    background-repeat: repeat;
+    opacity: 0.12;
+}
+.stars { background-image: url('https://svgshare.com/i/13kG.svg'); animation: moveStars 60s linear infinite; }
+.stars2 { background-image: url('https://svgshare.com/i/13kG.svg'); opacity: 0.07; animation: moveStars2 120s linear infinite; }
+.stars3 { background-image: url('https://svgshare.com/i/13kG.svg'); opacity: 0.04; animation: moveStars3 180s linear infinite; }
+
+@keyframes moveStars {
+    0% { background-position: 0 0; }
+    100% { background-position: 1000px 1000px; }
+}
+@keyframes moveStars2 {
+    0% { background-position: 0 0; }
+    100% { background-position: -1000px 500px; }
+}
+@keyframes moveStars3 {
+    0% { background-position: 0 0; }
+    100% { background-position: 500px -1000px; }
+}
+
+/* Siluet Hutan Parallax */
+.forest {
+    position: fixed;
+    bottom: 0; left: 0; width: 100vw; height: 180px;
+    background: url('https://svgshare.com/i/13kF.svg') repeat-x bottom left;
+    z-index: 3;
+    opacity: 0.5;
+    animation: forestMove 30s linear infinite alternate;
+}
+@keyframes forestMove {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 200px; }
+}
+
+/* Biodata Section Enhancement */
+.biodata-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background: rgba(20, 83, 45, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(22,34,42,0.15);
+    max-width: 700px;
+    margin: 3.5rem auto 3rem auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+    background: linear-gradient(135deg, rgba(49,78,60,0.85) 60%, rgba(126,200,227,0.12) 100%);
+    border: 2px solid #7ec8e3;
+    box-shadow: 0 8px 32px 0 rgba(126,200,227,0.10), 0 2px 12px rgba(22,34,42,0.10);
+    backdrop-filter: blur(2px);
+}
+
+.biodata-photo img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #e6f2ef;
+    box-shadow: 0 4px 24px #7ec8e355, 0 2px 12px rgba(126,200,227,0.15);
+    transition: transform 0.3s;
+    background: #fff;
+}
+
+.biodata-photo img:hover {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 8px 32px #b7eacb77, 0 2px 12px #7ec8e377;
+}
+
+.profile-photo-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 2.5rem 0;
+}
+
+.profile-photo-enhanced {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    background: linear-gradient(135deg, #7ec8e3 0%, #b7eacb 100%);
+    background-clip: padding-box, border-box;
+    box-shadow: 0 6px 32px 0 #7ec8e355, 0 1.5px 8px #0002;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-photo-enhanced:hover {
+    transform: scale(1.07) rotate(-2deg);
+    box-shadow: 0 12px 48px 0 #7ec8e399, 0 3px 16px #0003;
+    border-color: #a3e635;
+    cursor: pointer;
+}
+
+/* Navbar */
+.nav-link {
+    color: #7ec8e3;
+    text-decoration: none;
+    margin: 0 1.2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+.nav-link:hover {
+    color: #b7eacb;
+}
+.navbar {
+    z-index: 20;
+    position: sticky;
+    top: 0;
+    background: rgba(22,34,42,0.96);
+    box-shadow: 0 2px 8px #7ec8e322;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+/* Skills */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+.skill-item {
+    background: rgba(126,200,227,0.08);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 2px 8px #7ec8e322;
+}
+.skill-item svg {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Kontak */
+.contact-section {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: rgba(20,83,45,0.7);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px #b7eacb22;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+}
+.contact-section h2 {
+    color: #7ec8e3;
+}
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contact-list li {
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+    color: #e6f2ef;
+}
+.contact-list a {
+    color: #b7eacb;
+    text-decoration: underline;
+}
+
+/* SVG Decoration */
+.svg-deco {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+.svg-deco.top-left {
+    top: -40px;
+    left: -40px;
+    width: 120px;
+    opacity: 0.12;
+}
+.svg-deco.bottom-right {
+    bottom: -40px;
+    right: -40px;
+    width: 120px;
+    opacity: 0.12;
+}
+
+a, button, .nav-link, .project-card, .skill-item {
+    outline: none !important;
+    box-shadow: none !important;
+}
+a:focus, button:focus, .nav-link:focus, .project-card:focus, .skill-item:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+a::-moz-focus-inner, button::-moz-focus-inner, .nav-link::-moz-focus-inner, .project-card::-moz-focus-inner, .skill-item::-moz-focus-inner {
+    border: 0 !important;
+}
+
+/* Responsive dan scrollbar tetap */
+@media (max-width: 900px) {
+    .project-card {
+        max-width: 98vw;
+        padding: 1.2rem 0.8rem 1.2rem 0.8rem;
+    }
+}
+@media (max-width: 700px) {
+    .biodata-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem;
+    }
+    .biodata-photo img {
+        margin-bottom: 1rem;
+    }
+    .biodata-info {
+        padding: 1rem 0.5rem;
+    }
+    .portfolio-section {
+        padding: 1rem;
+    }
+    .project-list {
+        gap: 1.2rem;
+    }
+    .project-card {
+        min-height: unset;
+    }
+}
+body::-webkit-scrollbar { width: 0 !important; }
+body { -ms-overflow-style: none; scrollbar-width: none; }
+body { -ms-overflow-style: none; scrollbar-width: none; }
+
